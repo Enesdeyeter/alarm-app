@@ -1,0 +1,46 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+ObservableAlarm _$ObservableAlarmFromJson(Map<String, dynamic> json) {
+  return ObservableAlarm(
+    id: json['id'],
+    name: json['name'],
+    hour: json['hour'],
+    minute: json['minute'],
+    monday: json['monday'],
+    tuesday: json['tuesday'],
+    wednesday: json['wednesday'],
+    thursday: json['thursday'],
+    friday: json['friday'],
+    saturday: json['saturday'],
+    sunday: json['sunday'],
+    volume: json['volume'],
+    active: json['active'],
+  )
+    ..playlistIds =
+        (json['playlistIds'] as List)?.map((e) => e as String)?.toList()
+    ..musicIds = (json['musicIds'] as List)?.map((e) => e as String)?.toList()
+    ..musicPaths =
+        (json['musicPaths'] as List)?.map((e) => e as String)?.toList();
+}
+
+Map<String, dynamic> _$ObservableAlarmToJson(ObservableAlarm instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'hour': instance.hour,
+      'minute': instance.minute,
+      'monday': instance.monday,
+      'tuesday': instance.tuesday,
+      'wednesday': instance.wednesday,
+      'thursday': instance.thursday,
+      'friday': instance.friday,
+      'saturday': instance.saturday,
+      'sunday': instance.sunday,
+      'volume': instance.volume,
+      'active': instance.active,
+      'playlistIds': instance.playlistIds,
+      'musicIds': instance.musicIds,
+      'musicPaths': instance.musicPaths,
+    };
